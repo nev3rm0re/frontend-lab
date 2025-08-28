@@ -13,17 +13,22 @@ export default function Home() {
       {/* row-start-2 places this in the middle row of the grid */}
       {/* sm:items-start aligns items to start on small screens and up */}
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <h1>My Blog</h1>
-        <p>Coming soon...</p>
+        <h1 className="text-4xl font-bold text-foreground">My Frontend Lab</h1>
+        <p className="text-muted-foreground text-lg">A space for experiments, insights, and sharing knowledge.</p>
         {/* Next.js Link component for client-side navigation */}
         {/* This will navigate to /blog without a full page reload */}
-        <Link href="/blog">Blog</Link>
+        <Link 
+          href="/blog" 
+          className="text-primary hover:text-primary-hover font-medium text-lg underline"
+        >
+          Read the Blog →
+        </Link>
       </main>
 
       {/* Footer section */}
       {/* row-start-3 places this in the bottom row of the grid */}
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <p>© 2025 My Blog</p>
+        <p className="text-muted-foreground">© 2025 My Frontend Lab</p>
       </footer>
     </div>
   );

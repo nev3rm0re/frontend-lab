@@ -9,34 +9,34 @@ export default async function BlogPage() {
       <div className="mb-8">
         <Link 
           href="/" 
-          className="text-blue-600 hover:text-blue-800 mb-4 inline-block"
+          className="text-primary hover:text-primary-hover mb-4 inline-block"
         >
           ← Back to Home
         </Link>
-        <h1 className="text-4xl font-bold mb-4">Blog</h1>
-        <p className="text-gray-600">
+        <h1 className="text-4xl font-bold mb-4 text-foreground">Blog</h1>
+        <p className="text-muted-foreground">
           Thoughts, tutorials, and insights from my development journey.
         </p>
       </div>
 
       {posts.length === 0 ? (
         <div className="text-center py-12">
-          <p className="text-gray-500 text-lg">No blog posts yet.</p>
-          <p className="text-gray-400 mt-2">
+          <p className="text-muted-foreground text-lg">No blog posts yet.</p>
+          <p className="text-muted-foreground mt-2 opacity-75">
             Check the START_HERE.md guide to learn how to add your first post!
           </p>
         </div>
       ) : (
         <div className="space-y-8">
           {posts.map((post) => (
-            <article key={post.slug} className="border-b border-gray-200 pb-8">
+            <article key={post.slug} className="border-b border-border pb-8">
               <Link href={`/blog/${post.slug}`}>
-                <h2 className="text-2xl font-semibold mb-2 hover:text-blue-600 transition-colors">
+                <h2 className="text-2xl font-semibold mb-2 text-foreground hover:text-primary transition-colors">
                   {post.title}
                 </h2>
               </Link>
               
-              <div className="flex items-center text-sm text-gray-500 mb-3">
+              <div className="flex items-center text-sm text-muted-foreground mb-3">
                 <time dateTime={post.date}>{post.date}</time>
                 {post.tags && post.tags.length > 0 && (
                   <>
@@ -45,7 +45,7 @@ export default async function BlogPage() {
                       {post.tags.map((tag) => (
                         <span 
                           key={tag}
-                          className="bg-gray-100 px-2 py-1 rounded text-xs"
+                          className="bg-muted text-muted-foreground px-2 py-1 rounded text-xs"
                         >
                           {tag}
                         </span>
@@ -56,12 +56,12 @@ export default async function BlogPage() {
               </div>
               
               {post.excerpt && (
-                <p className="text-gray-700 mb-4">{post.excerpt}</p>
+                <p className="text-foreground mb-4">{post.excerpt}</p>
               )}
               
               <Link 
                 href={`/blog/${post.slug}`}
-                className="text-blue-600 hover:text-blue-800 font-medium"
+                className="text-primary hover:text-primary-hover font-medium"
               >
                 Read more →
               </Link>

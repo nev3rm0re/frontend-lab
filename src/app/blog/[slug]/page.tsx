@@ -45,15 +45,15 @@ export default async function BlogPost({ params }: BlogPostProps) {
       <div className="mb-8">
         <Link 
           href="/blog" 
-          className="text-blue-600 hover:text-blue-800 mb-4 inline-block"
+          className="text-primary hover:text-primary-hover mb-4 inline-block"
         >
           ← Back to Blog
         </Link>
         
         <header className="mb-8">
-          <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+          <h1 className="text-4xl font-bold mb-4 text-foreground">{post.title}</h1>
           
-          <div className="flex items-center text-sm text-gray-500 mb-6">
+          <div className="flex items-center text-sm text-muted-foreground mb-6">
             <time dateTime={post.date}>{post.date}</time>
             {post.tags && post.tags.length > 0 && (
               <>
@@ -62,7 +62,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
                   {post.tags.map((tag) => (
                     <span 
                       key={tag}
-                      className="bg-gray-100 px-2 py-1 rounded text-xs"
+                      className="bg-muted text-muted-foreground px-2 py-1 rounded text-xs"
                     >
                       {tag}
                     </span>
@@ -73,7 +73,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
           </div>
           
           {post.excerpt && (
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-muted-foreground leading-relaxed">
               {post.excerpt}
             </p>
           )}
@@ -85,10 +85,10 @@ export default async function BlogPost({ params }: BlogPostProps) {
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
       
-      <footer className="mt-12 pt-8 border-t border-gray-200">
+      <footer className="mt-12 pt-8 border-t border-border">
         <Link 
           href="/blog"
-          className="text-blue-600 hover:text-blue-800 font-medium"
+          className="text-primary hover:text-primary-hover font-medium"
         >
           ← Back to all posts
         </Link>
