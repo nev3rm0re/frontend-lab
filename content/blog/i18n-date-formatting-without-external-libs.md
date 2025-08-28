@@ -1,6 +1,6 @@
 ---
 title: "You Don't Need External Libraries for Date Internationalization"
-date: "2025-01-27"
+date: "2025-08-28"
 excerpt: "Discover how JavaScript's built-in Intl.DateTimeFormat API provides powerful date localization without adding extra dependencies to your bundle"
 tags: ["i18n", "javascript", "frontend", "dates", "lingui", "internationalization"]
 published: true
@@ -78,16 +78,10 @@ class DateFormatter {
     // Configure date style
     switch (options.style) {
       case 'short':
-        formatOptions.dateStyle = 'short';
-        break;
       case 'medium':
-        formatOptions.dateStyle = 'medium';
-        break;
       case 'long':
-        formatOptions.dateStyle = 'long';
-        break;
       case 'full':
-        formatOptions.dateStyle = 'full';
+        formatOptions.dateStyle = options.style;
         break;
       default:
         formatOptions.year = 'numeric';
