@@ -1,0 +1,54 @@
+# Project Context
+This is a Next.js 15 blog/portfolio site using TypeScript and Tailwind CSS.
+The site is deployed on Vercel and serves as a personal frontend lab for experiments and blog posts.
+
+# Coding Standards
+- Use TypeScript for all new files
+- Follow Next.js 13+ App Router conventions
+- Use Tailwind for styling (avoid custom CSS unless necessary)
+- Prefer server components unless client interactivity is needed
+- Use semantic HTML and accessible components
+- Follow React best practices and hooks guidelines
+
+# File Organization
+- Blog posts go in /content/blog/ as markdown files with frontmatter
+- React components go in /src/components/
+- Utilities and helpers go in /src/lib/
+- Use the app directory for routing (app router)
+- Keep static assets in /public/
+
+# Content Guidelines
+- Blog posts should have proper frontmatter (title, date, excerpt, tags, published)
+- Use descriptive file names with kebab-case for blog posts
+- Include alt text for images
+- Write engaging, personal content
+- Maintain consistent tone and style
+
+# Dependencies
+- Prefer using existing dependencies over adding new ones
+- Use yarn as package manager (never npm)
+- Keep bundle size in mind
+- Check for security vulnerabilities regularly
+
+# AI Assistance Preferences
+- Explain architectural decisions in comments
+- Include comprehensive error handling
+- Suggest performance optimizations when relevant
+- Maintain consistency with existing code patterns
+- Focus on accessibility and SEO best practices
+- Provide TypeScript types for all functions and components
+- Consider mobile-first responsive design
+
+# Development Workflow
+- Always test changes locally with `yarn dev`
+- Use meaningful commit messages
+- Deploy happens automatically via Vercel on push to main
+- Check for linting errors before committing
+- Follow the guidelines in START_HERE.md for adding content
+
+# Security & Performance
+- Sanitize any user inputs
+- Optimize images and assets
+- Use Next.js built-in optimizations
+- Implement proper caching strategies
+- Follow SEO best practices

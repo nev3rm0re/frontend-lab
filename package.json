@@ -6,22 +6,34 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:check": "next lint --dir src --dir content",
+    "lint:fix": "next lint --dir src --dir content --fix",
+    "lint:strict": "next lint --dir src --dir content --max-warnings 0",
+    "type-check": "tsc --noEmit",
+    "validate": "yarn type-check && yarn lint:strict",
+    "fix-all": "yarn lint:fix && yarn type-check",
+    "clean": "rm -rf .next out",
+    "fresh-install": "rm -rf node_modules yarn.lock && yarn install",
+    "pre-commit": "yarn validate && yarn build"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "gray-matter": "^4.0.3",
+    "marked": "^16.2.0",
+    "next": "15.1.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.6"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
-    "@eslint/eslintrc": "^3"
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
